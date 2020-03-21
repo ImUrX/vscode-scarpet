@@ -3,13 +3,9 @@
         "lineComment": "//",
     },
     "brackets": [
-        ["[", "]"],
         ["(", ")"]
     ],
-    "autoClosingPairs": [{
-            "open": "[",
-            "close": "]",
-        },
+    "autoClosingPairs": [
         {
             "open": "(",
             "close": ")"
@@ -27,7 +23,6 @@
     ],
     "autoCloseBefore": ";:.,=}]) \n\t",
     "surroundingPairs": [
-        ["[", "]"],
         ["(", ")"],
         ["'", "'"]
     ],
