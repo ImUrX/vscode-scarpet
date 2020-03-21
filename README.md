@@ -1,3 +1,7 @@
-# scarpet
+# Scarpet Language extension for VSCode
 
-is a very coool app which i need to finish
+## Language
+This is up to date with the current version of scarpet
+
+## API
+WIP
