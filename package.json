@@ -1,0 +1,25 @@
+{
+    "name": "scarpet",
+    "displayName": "scarpet",
+    "description": "scarpet language extension for vscode",
+    "version": "0.0.1",
+    "engines": {
+        "vscode": "^1.43.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [{
+            "id": "scarpet",
+            "aliases": ["scarpet", "sc"],
+            "extensions": [".sc"],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "scarpet",
+            "scopeName": "source.sc",
+            "path": "./syntaxes/scarpet.tmLanguage.json"
+        }]
+    }
+}

@@ -1,0 +1,171 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "scarpet",
+	"patterns": [{
+			"include": "#expression"
+		},
+		{
+			"include": "#statements"
+		}
+	],
+	"repository": {
+		"expression": {
+			"patterns": [{
+					"include": "#keywords"
+				},
+				{
+					"include": "#strings"
+				},
+				{
+					"include": "#paren-expression"
+				}
+			]
+		},
+		"statements": {
+			"patterns": [{
+					"include": "#variables"
+				},
+				{
+					"include": "#comments"
+				}
+			]
+		},
+		"keywords": {
+			"patterns": [{
+					"name": "keyword.control",
+					"match": "if|return|exit|try|call|import|outer|break|continue|for|while|loop|vars?|undef"
+				},
+				{
+					"name": "support.type",
+					"match": "copy|type|bool|number|str"
+				},
+				{
+					"name": "keyword.operator.next",
+					"match": "\\;"
+				},
+				{
+					"name": "keyword.operator.definition",
+					"match": "\\->"
+				},
+				{
+					"name": "keyword.operator.accessor",
+					"match": "\\:"
+				},
+				{
+					"name": "keyword.operator.matching",
+					"match": "\\~"
+				},
+				{
+					"name": "keyword.operator.arithmetic",
+					"match": "\\+|\\-|\\*\\/"
+				},
+				{
+					"name": "keyword.operator.comparison",
+					"match": "(==|\\!=|<|>|<=|>=)"
+				},
+				{
+					"name": "keyword.operator.logical",
+					"match": "(&&|\\|\\|)"
+				},
+				{
+					"name": "keyword.operator.assignment",
+					"match": "(=|<>|\\+=)"
+				},
+				{
+					"name": "keyword.operator.unary",
+					"match": "\\-|\\+"
+				},
+				{
+					"name": "keyword.operator.negation",
+					"match": "\\!"
+				},
+				{
+					"name": "keyword.operator.comma",
+					"match": "\\,"
+				}
+			]
+		},
+		"variables": {
+			"patterns": [{
+					"name": "constant.language",
+					"match": "null|true|false|pi|euler"
+				},
+				{
+					"name": "constant.numeric",
+					"patterns": [{
+							"name": "constant.numeric.decimal",
+							"match": "-?\\d+(.\\d+)?"
+						},
+						{
+							"name": "constant.numeric.exponential",
+							"match": "-?\\d+e-?\\d+"
+						},
+						{
+							"name": "constant.numeric.hexadecimal",
+							"match": "0x\\h+"
+						}
+					]
+				},
+				{
+					"match": "(\\w+)(\\(.*\\))",
+					"captures": {
+						"1": {
+							"name": "entity.name.function"
+						},
+						"2": {
+							"patterns": [{
+								"include": "#paren-expression"
+							}]
+						}
+					}
+				},
+				{
+					"name": "variable.name",
+					"match": "(\\w+)"
+				}
+			]
+		},
+		"comments": {
+			"name": "comment.line",
+			"patterns": [{
+				"name": "comment.line.double-slash",
+				"match": "\\/\\/.*\\n"
+			}]
+		},
+		"strings": {
+			"name": "string.quoted",
+			"patterns": [{
+				"name": "string.quoted.single",
+				"begin": "'",
+				"end": "'",
+				"patterns": [{
+					"name": "constant.character.escape.scarpet",
+					"match": "\\\\."
+				}]
+			}]
+		},
+		"paren-expression": {
+			"begin": "\\(",
+			"end": "\\)",
+			"beginCaptures": {
+				"0": {
+					"name": "punctuation.paren.open"
+				}
+			},
+			"endCaptures": {
+				"0": {
+					"name": "punctuation.paren.close"
+				}
+			},
+			"name": "expression.group",
+			"patterns": [{
+					"include": "#expression"
+				},
+				{
+					"include": "#statements"
+				}
+			]
+		}
+	},
+	"scopeName": "source.sc"
+}
