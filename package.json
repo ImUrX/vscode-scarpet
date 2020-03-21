@@ -1,25 +1,54 @@
 {
-    "name": "scarpet",
-    "displayName": "scarpet",
-    "description": "scarpet language extension for vscode",
-    "version": "0.0.1",
-    "engines": {
-        "vscode": "^1.43.0"
-    },
-    "categories": [
-        "Programming Languages"
+  "name": "scarpet",
+  "displayName": "scarpet",
+  "description": "scarpet language extension for vscode",
+  "publisher": "ImUrX",
+  "author": {
+    "name": "ImUrX"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/ImUrX/vscode-scarpet",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ImUrX/vscode-scarpet"
+  },
+  "bugs": {
+    "url": "https://github.com/ImUrX/vscode-scarpet/issues"
+  },
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.43.0"
+  },
+  "keywords": [
+    "scarpet",
+    "fabric",
+    "carpet",
+    "fabric-carpet",
+    "minecraft"
+  ],
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [
+      {
+        "id": "scarpet",
+        "aliases": [
+          "scarpet",
+          "sc"
+        ],
+        "extensions": [
+          ".sc"
+        ],
+        "configuration": "./language-configuration.json"
+      }
     ],
-    "contributes": {
-        "languages": [{
-            "id": "scarpet",
-            "aliases": ["scarpet", "sc"],
-            "extensions": [".sc"],
-            "configuration": "./language-configuration.json"
-        }],
-        "grammars": [{
-            "language": "scarpet",
-            "scopeName": "source.sc",
-            "path": "./syntaxes/scarpet.tmLanguage.json"
-        }]
-    }
+    "grammars": [
+      {
+        "language": "scarpet",
+        "scopeName": "source.sc",
+        "path": "./syntaxes/scarpet.tmLanguage.json"
+      }
+    ]
+  }
 }
