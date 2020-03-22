@@ -32,12 +32,20 @@
 		},
 		"keywords": {
 			"patterns": [{
-					"name": "keyword.control",
-					"match": "[^\\w]?(if|return|exit|try|call|import|outer|break|continue|for|while|loop|vars?|undef)[^\\w]"
+					"match": "[^\\w]?(if|return|exit|try|call|import|outer|break|continue|for|while|loop|vars?|undef)[^\\w]",
+					"captures": {
+						"1": {
+							"name": "keyword.control"
+						}
+					}
 				},
 				{
-					"name": "support.type",
-					"match": "[^\\w]?(copy|type|bool|number|str)[,()\\s:;]"
+					"match": "[^\\w]?(copy|type|bool|number|str)[^\\w]",
+					"captures": {
+						"1": {
+							"name": "support.type"
+						}
+					}
 				},
 				{
 					"name": "keyword.operator.next",
@@ -83,8 +91,15 @@
 		},
 		"variables": {
 			"patterns": [{
-					"name": "constant.language",
-					"match": "[^\\w]?(null|true|false|pi|euler)[^\\w]"
+					"match": "[^\\w]?(null|true|false)|(pi|euler)[^\\w]",
+					"captures": {
+						"1": {
+							"name": "constant.language"
+						},
+						"2": {
+							"name": "constant.numeric.constant"
+						}
+					}
 				},
 				{
 					"name": "constant.numeric",
