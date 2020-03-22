@@ -33,11 +33,11 @@
 		"keywords": {
 			"patterns": [{
 					"name": "keyword.control",
-					"match": "if|return|exit|try|call|import|outer|break|continue|for|while|loop|vars?|undef"
+					"match": "[^\\w]?(if|return|exit|try|call|import|outer|break|continue|for|while|loop|vars?|undef)[^\\w]"
 				},
 				{
 					"name": "support.type",
-					"match": "copy|type|bool|number|str"
+					"match": "[^\\w]?(copy|type|bool|number|str)[,()\\s:;]"
 				},
 				{
 					"name": "keyword.operator.next",
@@ -57,7 +57,7 @@
 				},
 				{
 					"name": "keyword.operator.arithmetic",
-					"match": "\\+|\\-|\\*\\/"
+					"match": "\\b(\\+|\\-|\\*\\/)\\b"
 				},
 				{
 					"name": "keyword.operator.comparison",
@@ -72,10 +72,6 @@
 					"match": "(=|<>|\\+=)"
 				},
 				{
-					"name": "keyword.operator.unary",
-					"match": "\\-|\\+"
-				},
-				{
 					"name": "keyword.operator.negation",
 					"match": "\\!"
 				},
@@ -88,17 +84,17 @@
 		"variables": {
 			"patterns": [{
 					"name": "constant.language",
-					"match": "null|true|false|pi|euler"
+					"match": "[^\\w]?(null|true|false|pi|euler)[^\\w]"
 				},
 				{
 					"name": "constant.numeric",
 					"patterns": [{
-							"name": "constant.numeric.decimal",
-							"match": "-?\\d+(.\\d+)?"
+							"name": "constant.numeric.exponential",
+							"match": "\\-?\\d+e\\-?\\d+"
 						},
 						{
-							"name": "constant.numeric.exponential",
-							"match": "-?\\d+e-?\\d+"
+							"name": "constant.numeric.decimal",
+							"match": "\\-?\\d+(.\\d+)?"
 						},
 						{
 							"name": "constant.numeric.hexadecimal",
@@ -107,7 +103,7 @@
 					]
 				},
 				{
-					"match": "(\\w+)(\\([^\\)]\\))",
+					"match": "(\\w+)(\\([^\\)]*\\))",
 					"captures": {
 						"1": {
 							"name": "entity.name.function"
