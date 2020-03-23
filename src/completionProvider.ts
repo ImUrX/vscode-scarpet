@@ -184,6 +184,16 @@ export class ScarpetSet extends Set<vscode.CompletionItem> {
             new vscode.CompletionItem("pairs", typesEnum.Function),
             //  Minecraft
             new vscode.CompletionItem("block", typesEnum.Function),
+            new vscode.CompletionItem("x", typesEnum.Function),
+            new vscode.CompletionItem("y", typesEnum.Function),
+            new vscode.CompletionItem("z", typesEnum.Function),
+            new vscode.CompletionItem("_x", typesEnum.Function),
+            new vscode.CompletionItem("_y", typesEnum.Function),
+            new vscode.CompletionItem("_z", typesEnum.Function),
+            new vscode.CompletionItem("_", typesEnum.Function),
+            new vscode.CompletionItem("_i", typesEnum.Function),
+            new vscode.CompletionItem("_a", typesEnum.Function),
+
             //      World Manipulation
             new vscode.CompletionItem("set", typesEnum.Function),
             new vscode.CompletionItem("without_updates", typesEnum.Function),
@@ -259,6 +269,7 @@ export class ScarpetSet extends Set<vscode.CompletionItem> {
             new vscode.CompletionItem("inventory_find", typesEnum.Function),
             new vscode.CompletionItem("drop_item", typesEnum.Function),
             //      Events
+            new vscode.CompletionItem("__config", typesEnum.Function),
             new vscode.CompletionItem("__on_tick", typesEnum.Event),
             new vscode.CompletionItem("__on_tick_nether", typesEnum.Event),
             new vscode.CompletionItem("__on_tick_ender", typesEnum.Event),
@@ -307,6 +318,7 @@ export class ScarpetSet extends Set<vscode.CompletionItem> {
             new vscode.CompletionItem("schedule", typesEnum.Function),
             new vscode.CompletionItem("statistic", typesEnum.Function),
             new vscode.CompletionItem("plop", typesEnum.Function),
+            new vscode.CompletionItem("reset_chunk", typesEnum.Function),
 
             //Keywords (Some global variables are going to be keywords)
             //  Global Variables
@@ -320,11 +332,14 @@ export class ScarpetSet extends Set<vscode.CompletionItem> {
             new vscode.CompletionItem("outer", typesEnum.Keyword),
             new vscode.CompletionItem("import", typesEnum.Keyword),
             new vscode.CompletionItem("call", typesEnum.Keyword),
+            new vscode.CompletionItem("not", typesEnum.Function),
+            new vscode.CompletionItem("$", typesEnum.Function),
             //  Control Flow
             new vscode.CompletionItem("return", typesEnum.Keyword),
             new vscode.CompletionItem("exit", typesEnum.Keyword),
             new vscode.CompletionItem("try", typesEnum.Keyword),
             new vscode.CompletionItem("if", typesEnum.Keyword),
+            new vscode.CompletionItem("throw", typesEnum.Function),
             //  Loops
             new vscode.CompletionItem("break", typesEnum.Keyword),
             new vscode.CompletionItem("continue", typesEnum.Keyword),
