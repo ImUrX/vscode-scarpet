@@ -82,5 +82,10 @@
     "mocha": "^7.0.1",
     "typescript": "^3.7.5",
     "vscode-test": "^1.3.0"
+  },
+  "dependencies": {
+    "@types/tokenizr": "^1.5.1",
+    "asty-astq": "^1.12.3",
+    "tokenizr": "^1.5.7"
   }
 }
