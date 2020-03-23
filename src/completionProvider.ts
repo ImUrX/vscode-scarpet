@@ -349,7 +349,3 @@ export class ScarpetSet extends Set<vscode.CompletionItem> {
         ]);
     }
 }
-
-
-x y z p</Keywords>
-</Keywords>
