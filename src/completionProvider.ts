@@ -89,7 +89,7 @@ export class ScarpetSet extends Set<vscode.CompletionItem> {
             new vscode.CompletionItem("->", typesEnum.Operator),
             new vscode.CompletionItem(";", typesEnum.Operator),
             new vscode.CompletionItem(",", typesEnum.Operator),
-
+            new vscode.CompletionItem("$", typesEnum.Operator),
             //Functions
             //  arithmetic
             new vscode.CompletionItem("fact", typesEnum.Function),
@@ -269,7 +269,7 @@ export class ScarpetSet extends Set<vscode.CompletionItem> {
             new vscode.CompletionItem("inventory_find", typesEnum.Function),
             new vscode.CompletionItem("drop_item", typesEnum.Function),
             //      Events
-            new vscode.CompletionItem("__config", typesEnum.Function),
+            new vscode.CompletionItem("__config", typesEnum.Event),
             new vscode.CompletionItem("__on_tick", typesEnum.Event),
             new vscode.CompletionItem("__on_tick_nether", typesEnum.Event),
             new vscode.CompletionItem("__on_tick_ender", typesEnum.Event),
@@ -333,17 +333,17 @@ export class ScarpetSet extends Set<vscode.CompletionItem> {
             new vscode.CompletionItem("import", typesEnum.Keyword),
             new vscode.CompletionItem("call", typesEnum.Keyword),
             new vscode.CompletionItem("not", typesEnum.Function),
-            new vscode.CompletionItem("$", typesEnum.Function),
             //  Control Flow
             new vscode.CompletionItem("return", typesEnum.Keyword),
             new vscode.CompletionItem("exit", typesEnum.Keyword),
             new vscode.CompletionItem("try", typesEnum.Keyword),
             new vscode.CompletionItem("if", typesEnum.Keyword),
-            new vscode.CompletionItem("throw", typesEnum.Function),
+            new vscode.CompletionItem("throw", typesEnum.Keyword),
             //  Loops
             new vscode.CompletionItem("break", typesEnum.Keyword),
             new vscode.CompletionItem("continue", typesEnum.Keyword),
             new vscode.CompletionItem("for", typesEnum.Keyword),
+            new vscode.CompletionItem("c_for", typesEnum.Keyword),
             new vscode.CompletionItem("while", typesEnum.Keyword),
             new vscode.CompletionItem("loop", typesEnum.Keyword),
         ]);

@@ -49,6 +49,13 @@
         "scopeName": "source.sc",
         "path": "./syntaxes/scarpet.tmLanguage.json"
       }
+    ],
+    "commands": [
+      {
+        "command": "scarpet.copyToClipboard",
+        "title": "Copy code to clipboard for Minecraft usage",
+        "category": "scarpet"
+      }
     ]
   },
   "activationEvents": [

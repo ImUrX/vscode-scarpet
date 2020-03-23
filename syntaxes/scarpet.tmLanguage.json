@@ -32,7 +32,7 @@
 		},
 		"keywords": {
 			"patterns": [{
-					"match": "[^\\w]?(if|return|exit|try|call|import|outer|break|continue|for|while|loop|vars?|undef)[^\\w]",
+					"match": "[^\\w]?(if|return|exit|try|call|import|outer|break|continue|for|c_for|while|loop|vars?|undef)[^\\w]",
 					"captures": {
 						"1": {
 							"name": "keyword.control"
@@ -40,7 +40,7 @@
 					}
 				},
 				{
-					"match": "[^\\w]?(copy|type|bool|number|str)[^\\w]",
+					"match": "[^\\w]?(copy|type|bool|number|str|player)[^\\w]",
 					"captures": {
 						"1": {
 							"name": "support.type"
