@@ -14,16 +14,16 @@ All notable changes to the "scarpet" extension will be documented in this file.
 - Made the readme even funnier by our famous @Ghoulboy78
 
 ## [0.1.1] - 2020-03-22
-### Changed
+### Fixed
 - Hotfix for some huge glaring issues in the syntax
 
 ## [0.1.0] - 2020-03-22
 ### Added
 - Auto-completion with Minecraft API included
-
-### Changed
-- Fixed some tmlanguage bugs
 - Made a cool looking readme ( @Ghoulboy78 ;) )
+
+### Fixed
+- Fixed some tmlanguage bugs
 
 ## [0.0.1] - 2020-03-21
 ### Added
