@@ -11,7 +11,7 @@ All notable changes to the "scarpet" extension will be documented in this file.
 
 ### Changed
 - Changed the tmlanguage that had missing syntax
-- Made the readme even funnier by our famous @Ghoulboy78
+- Made the CONTRIBUTORS funnier by our famous @Ghoulboy78
 
 ## [0.1.1] - 2020-03-22
 ### Fixed
