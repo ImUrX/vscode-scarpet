@@ -13,7 +13,11 @@ export function copyClipboard({ document }: vscode.TextEditor) {
         if(text.replace(/\/\/.*/, "").startsWith("$")) {
             clipboard.push(text);
         } else {
-            clipboard.push("$" + text);
+            if(text.replace(/\/\/.*/,"")=="\n" ||  text.replace(/\/\/.*/,"")==""){
+                clipboard.push(text);
+            } else {
+                clipboard.push("$" + text);
+            }
         }
     }
     vscode.env.clipboard.writeText(clipboard.join("\n"));

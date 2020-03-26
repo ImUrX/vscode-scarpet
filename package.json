@@ -38,7 +38,8 @@
           "sc"
         ],
         "extensions": [
-          ".sc"
+          ".sc",
+          ".scl"
         ],
         "configuration": "./language-configuration.json"
       }
