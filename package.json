@@ -35,7 +35,8 @@
         "id": "scarpet",
         "aliases": [
           "scarpet",
-          "sc"
+          "sc",
+          "scl"
         ],
         "extensions": [
           ".sc",
