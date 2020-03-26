@@ -1,0 +1,10 @@
+{
+    "iconDefinitions": {
+        "_icon": {
+            "iconPath": "./assets/scarpetFileIcon.svg"
+        },
+    },
+    "languageIds": {
+        "scarpet": "_icon"
+    }
+}

@@ -56,6 +56,13 @@
         "title": "Copy code to clipboard for Minecraft usage",
         "category": "scarpet"
       }
+    ],
+    "iconThemes": [
+      {
+        "id": "scarpet",
+        "label": "Scarpet",
+        "path": "./icon-theme.json"
+      }
     ]
   },
   "activationEvents": [
