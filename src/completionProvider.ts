@@ -345,6 +345,11 @@ export class ScarpetSet extends Set<vscode.CompletionItem> {
             new vscode.CompletionItem("c_for", typesEnum.Keyword),
             new vscode.CompletionItem("while", typesEnum.Keyword),
             new vscode.CompletionItem("loop", typesEnum.Keyword),
+            //Scoreboard API
+            new vscode.CompletionItem("scoreboard", typesEnum.Keyword),
+            new vscode.CompletionItem("scoreboard_add", typesEnum.Keyword),
+            new vscode.CompletionItem("scoreboard_remove", typesEnum.Keyword),
+            new vscode.CompletionItem("scoreboard_display", typesEnum.Keyword),
         ]);
     }
 }
