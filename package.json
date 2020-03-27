@@ -35,10 +35,12 @@
         "id": "scarpet",
         "aliases": [
           "scarpet",
-          "sc"
+          "sc",
+          "scl"
         ],
         "extensions": [
-          ".sc"
+          ".sc",
+          ".scl"
         ],
         "configuration": "./language-configuration.json"
       }
