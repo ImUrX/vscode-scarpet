@@ -3,7 +3,7 @@ import * as vscode from "vscode";
 export type Argument = {
     name: string;
     description: string | vscode.MarkdownString;
-}
+};
 
 export class ScarpetItem {
     public label: string;
