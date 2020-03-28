@@ -1,10 +1,10 @@
 expression "expression"
-	= Literal Return LineTerminator? expression?
+    = Literal Return LineTerminator? expression?
     / Literal LineTerminator?
 
 //Grammar
 SourceChar 
-	= .
+    = .
 
 LineTerminator
     = [\n\r\u2028\u2029]
@@ -14,28 +14,28 @@ Comment "comment"
 
 //Operators
 Unary
-	= [+-]
+    = [+-]
 Not
-	= "!"
+    = "!"
 Return
     = ";"
 
 //Literals
 Literal "literal"
-	= Null / Boolean / Number / String
+    = Null / Boolean / Number / String
 
 Null
-	= "null" { return null; }
+    = "null" { return null; }
 
 // Booleans
 Boolean "boolean"
-	= not:Not? bool:(True / False) { return not ? !bool : bool; }
+    = not:Not? bool:(True / False) { return not ? !bool : bool; }
 
 True
-	= "true" { return true; }
+    = "true" { return true; }
     
 False
-	= "false" { return false; }
+    = "false" { return false; }
     
 // Numbers
 Number "number"
@@ -54,13 +54,13 @@ HEXDIG = [0-9a-f]
 
 // Strings
 String "string"
-	= "'" chars:Char* "'" { return chars.join(""); }
+    = "'" chars:Char* "'" { return chars.join(""); }
 
 Char
     = Unescaped
     / "\\"
       sequence:(
-      	"'"
+          "'"
         / "\\"
         / "b" { return "\b"; }
         / "f" { return "\f"; }
