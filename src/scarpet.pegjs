@@ -3,12 +3,46 @@
         if(lit == null || lit.value == null) return lit;
         return lit.value;
     }
+
+    function makeObj(value, type, extraProps = {}) {
+        return {
+            ...{
+                type, value,
+                properties: {},
+            }, 
+            ...extraProps
+        };
+    }
+
+    function makeNum(value) {
+        return makeObj(value, "Number");
+    }
+
+    function makeString(value) {
+        return makeObj(value, "String");
+    }
+
+    function makeIdent(name, value = 0) {
+        return makeObj(value, "Identifier", { name });
+    }
+
+    function getIdentType(ident) {
+        if(ident.value instanceof Number) return "Number";
+        if(ident.value instanceof String) return "String";
+        return null;
+    }
+
+    function boolConv(bool) {
+        return bool ? 1 : 0;
+    }
 }
+
+Expression "expression"
+    = MatchExpression
 
 PrimaryExpression "primary expression"
     = Identifier
     / Literal
-    / "(" _ ret:Expression _ ")" { return ret; }
 
 //Grammar
 SourceChar 
@@ -41,12 +75,7 @@ Identifier
 
 IdentifierName "identifier"
   = head:IdentifierStart tail:IdentifierPart* {
-      return {
-        type: "Identifier",
-        name: head + tail.join(""),
-        value: 0,
-        properties: {}
-      };
+        return makeIdent(head + tail.join(""));
     }
 
 IdentifierStart
@@ -93,19 +122,19 @@ Boolean "boolean"
     = True / False
 
 True
-    = "true" { return 1; }
+    = "true" { return makeNum(1); }
 
 False
-    = "false" { return 0; }
+    = "false" { return makeNum(0); }
     
 // Numbers
 Number "number"
-    = Hex { return parseInt(text(), 16); }
-    / Int Frac? Exp? { return parseFloat(text()); }
-    / "pi" { return Math.PI; }
-    / "euler" { return Math.E; }
+    = Hex { return makeNum(parseInt(text(), 16)); }
+    / Int Frac? Exp? { return makeNum(parseFloat(text())); }
+    / "pi" { return makeNum(Math.PI); }
+    / "euler" { return makeNum(Math.E); }
     / Boolean
-    / Null { return 0; }
+    / Null { return makeNum(0); }
     
 Hex = "0x" HEXDIG+
 Exp = "e" Unary? DIGIT+
@@ -117,7 +146,7 @@ HEXDIG = [0-9a-f]
 
 // Strings
 String "string"
-    = "'" chars:Char* "'" { return chars.join(""); }
+    = "'" chars:Char* "'" { return makeString(chars.join("")); }
 
 Char
     = Unescaped
@@ -182,28 +211,42 @@ EOF
     = !.
 
 //Expressions
-Expression
-    = UnaryExpression
 
 GetExpression
-    = exp:PrimaryExpression _ access:(":" _ PrimaryExpression)? { return exp == null ? exp : (access ? exp.properties[getValue(access[2])] : exp); }
+    = exp:PrimaryExpression _ access:(":" _ Expression)? { return exp == null ? exp : (access ? exp.properties[getValue(access[2])] : exp); }
 Get = ":"
 
 UnaryExpression
     = un:Unary? _ lit:GetExpression { 
         const val = getValue(lit); 
-        return un === "-" ? val * -1 : (un === "+" ? val * 1 : val); 
+        return un === "-" ? makeNum(val * -1) : (un === "+" ? makeNum(val) * 1 : lit); 
     }
     / no:Not? _ lit:GetExpression { 
-        const val = getValue(lit), bool = no ? !val : val; 
-        return bool ? 1 : 0 
+        const val = getValue(lit); 
+        return no ? makeNum(boolConv(!val)) : lit; 
     }
 Unary 
     = "+"
     / "-"
 Not = "!"
 
-
+MatchExpression
+    = lit:UnaryExpression _ match:(Match _ GetExpression)? {
+    return match;
+        if(!match) return lit;
+        const val = getValue(lit), secVal = getValue(match[2]);
+        return 1;
+        if(lit == null || secVal == null) return null;
+        const type = lit.type == "Identifier" ? getIdentType(lit) : lit.type;
+        switch(type) {
+            case "Number":
+            case "String":
+                const res = val.toString().match(new RegExp(secVal));
+                return res ? res[0] : res;
+            default:
+                return null;
+        }
+    }
 Match = "~"
 
 Return = ";"
