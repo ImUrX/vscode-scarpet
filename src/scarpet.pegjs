@@ -1,3 +1,10 @@
+{
+    function getValue(lit) {
+        if(lit == null || lit.value == null) return lit;
+        return lit.value;
+    }
+}
+
 PrimaryExpression "primary expression"
     = Identifier
     / Literal
@@ -37,7 +44,8 @@ IdentifierName "identifier"
       return {
         type: "Identifier",
         name: head + tail.join(""),
-        value: 0
+        value: 0,
+        properties: {}
       };
     }
 
@@ -176,27 +184,24 @@ EOF
 //Expressions
 Expression
     = UnaryExpression
-    / NotExpression
-    / GetExpression
+
+GetExpression
+    = exp:PrimaryExpression _ access:(":" _ PrimaryExpression)? { return exp == null ? exp : (access ? exp.properties[getValue(access[2])] : exp); }
+Get = ":"
 
 UnaryExpression
-    = un:Unary? _ lit:PrimaryExpression { const val = lit.value ? lit.value : lit; return un === "-" ? val * -1 : val;}
-
+    = un:Unary? _ lit:GetExpression { 
+        const val = getValue(lit); 
+        return un === "-" ? val * -1 : (un === "+" ? val * 1 : val); 
+    }
+    / no:Not? _ lit:GetExpression { 
+        const val = getValue(lit), bool = no ? !val : val; 
+        return bool ? 1 : 0 
+    }
 Unary 
     = "+"
     / "-"
-
-NotExpression
-    = no:Not? _ lit:PrimaryExpression { 
-        const val = lit.value ? lit.value : lit, bool = no ? !val : val; 
-        return bool ? 1 : 0 
-    }
-
 Not = "!"
-
-GetExpression
-    = exp:PrimaryExpression _ ":" _ access:(Literal) { return exp.properties[access] }
-Get = ":"
 
 
 Match = "~"
