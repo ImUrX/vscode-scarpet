@@ -1,5 +1,5 @@
-.vscode-test/**
-out/**
+.vscode-test
+out
 node_modules
 *.vsix
 *.sc
