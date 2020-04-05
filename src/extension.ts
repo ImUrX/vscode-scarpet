@@ -2,7 +2,6 @@
 import * as vscode from "vscode";
 import CompletionProvider from "./completionProvider";
 import { copyClipboard } from "./commands";
-import { Parser } from "./parser";
 
 export function activate(ctx: vscode.ExtensionContext): void {
   console.log("Scarpet is alive and doing well");

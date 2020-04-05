@@ -58,13 +58,6 @@
         "title": "Copy code to clipboard for Minecraft usage",
         "category": "scarpet"
       }
-    ],
-    "iconThemes": [
-      {
-        "id": "scarpet",
-        "label": "Scarpet",
-        "path": "./icon-theme.json"
-      }
     ]
   },
   "activationEvents": [
@@ -92,8 +85,5 @@
     "typescript": "^3.7.5",
     "vscode-test": "^1.3.0"
   },
-  "dependencies": {
-    "moo": "^0.5.1",
-    "nearley": "^2.19.1"
-  }
+  "dependencies": {}
 }
