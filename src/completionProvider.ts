@@ -268,8 +268,10 @@ export class ScarpetSet extends Set<vscode.CompletionItem> {
       new vscode.CompletionItem("inventory_get", typesEnum.Function),
       new vscode.CompletionItem("inventory_set", typesEnum.Function),
       new vscode.CompletionItem("inventory_find", typesEnum.Function),
+      new vscode.CompletionItem("inventory_remove", typesEnum.Function),
       new vscode.CompletionItem("drop_item", typesEnum.Function),
       //      Events
+      new vscode.CompletionItem("__command()->", typesEnum.Event),
       new vscode.CompletionItem("__config()->", typesEnum.Event),
       new vscode.CompletionItem("__on_tick()->", typesEnum.Event),
       new vscode.CompletionItem("__on_lightning(pos, mode)->", typesEnum.Event),
@@ -316,6 +318,10 @@ export class ScarpetSet extends Set<vscode.CompletionItem> {
         "__on_player_attacks_entity(player, entity)->",
         typesEnum.Event
       ),
+      new vscode.CompletionItem("__on_player_takes_damage(player, amount, source, source_entity)->",typesEnum.Event),
+      new vscode.CompletionItem("__on_player_deals_damage(player, amount, entity)->",typesEnum.Event),
+      new vscode.CompletionItem("__on_player_dies(player)->",typesEnum.Event),
+      new vscode.CompletionItem("__on_player_respawns(player)->",typesEnum.Event),
       new vscode.CompletionItem(
         "__on_player_rides(player, forward, strafe, jumping, sneaking)->",
         typesEnum.Event
