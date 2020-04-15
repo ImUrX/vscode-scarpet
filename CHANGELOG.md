@@ -2,7 +2,12 @@
 
 All notable changes to the "scarpet" extension will be documented in this file.
 
-## [Unreleased]
+## [0.1.6] - 2020-04-05
+### Added
+- Support for .scl files
+
+### Changed
+- How events auto-complete
 
 ## [0.1.5] - 2020-03-23
 ### Added

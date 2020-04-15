@@ -6,5 +6,9 @@
     },
     "languageIds": {
         "scarpet": "_icon"
+    },
+    "fileExtensions": {
+        "sc": "_icon",
+        "scl": "_icon"
     }
 }
