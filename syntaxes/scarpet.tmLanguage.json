@@ -18,6 +18,12 @@
 				},
 				{
 					"include": "#paren-expression"
+				},
+				{
+					"include": "#square-expression"
+				},
+				{
+					"include": "#curly-expression"
 				}
 			]
 		},
@@ -169,7 +175,54 @@
 				}
 			},
 			"name": "expression.group",
-			"patterns": [{
+			"patterns": [
+				{
+					"include": "#expression"
+				},
+				{
+					"include": "#statements"
+				}
+			]
+		},
+		"curly-expression": {
+			"begin": "\\{",
+			"end": "\\}",
+			"beginCaptures": {
+				"0": {
+					"name": "punctuation.curly.open"
+				}
+			},
+			"endCaptures": {
+				"0": {
+					"name": "punctuation.curly.close"
+				}
+			},
+			"name": "expression.group",
+			"patterns": [
+				{
+					"include": "#expression"
+				},
+				{
+					"include": "#statements"
+				}
+			]
+		},
+		"square-expression": {
+			"begin": "\\[",
+			"end": "\\]",
+			"beginCaptures": {
+				"0": {
+					"name": "punctuation.square.open"
+				}
+			},
+			"endCaptures": {
+				"0": {
+					"name": "punctuation.square.close"
+				}
+			},
+			"name": "expression.group",
+			"patterns": [
+				{
 					"include": "#expression"
 				},
 				{

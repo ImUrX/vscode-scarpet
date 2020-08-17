@@ -2,6 +2,10 @@
 
 All notable changes to the "scarpet" extension will be documented in this file.
 
+## [0.1.7] - 2020-08-17
+### Added
+- Support for curly and square brackets
+
 ## [0.1.6] - 2020-04-05
 ### Added
 - Support for .scl files

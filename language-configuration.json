@@ -23,7 +23,9 @@
     "autoCloseBefore": ";:.,=) \n\t",
     "surroundingPairs": [
         ["(", ")"],
-        ["'", "'"]
+        ["'", "'"],
+        ["[", "]"],
+        ["{", "}"]
     ],
     "folding": {
         "markers": {
