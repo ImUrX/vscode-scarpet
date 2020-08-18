@@ -100,7 +100,7 @@ export class ScarpetSet extends Set<vscode.CompletionItem> {
       new vscode.CompletionItem("floor", typesEnum.Function),
       new vscode.CompletionItem("ceil", typesEnum.Function),
       new vscode.CompletionItem("ln", typesEnum.Function),
-      new vscode.CompletionItem("ln1p", typesEnum.Function),
+      new vscode.CompletionItem("log1p", typesEnum.Function),
       new vscode.CompletionItem("log10", typesEnum.Function),
       new vscode.CompletionItem("log", typesEnum.Function),
       new vscode.CompletionItem("mandelbrot", typesEnum.Function),
@@ -137,6 +137,7 @@ export class ScarpetSet extends Set<vscode.CompletionItem> {
       new vscode.CompletionItem("str", typesEnum.Class),
       //  Threading/Parallel
       new vscode.CompletionItem("task", typesEnum.Function),
+      new vscode.CompletionItem("task_dock", typesEnum.Function),
       new vscode.CompletionItem("task_count", typesEnum.Function),
       new vscode.CompletionItem("task_value", typesEnum.Function),
       new vscode.CompletionItem("task_join", typesEnum.Function),
@@ -145,11 +146,13 @@ export class ScarpetSet extends Set<vscode.CompletionItem> {
       //  Auxiliary
       new vscode.CompletionItem("lower", typesEnum.Function),
       new vscode.CompletionItem("replace", typesEnum.Function),
+      new vscode.CompletionItem("replace_first", typesEnum.Function),
       new vscode.CompletionItem("length", typesEnum.Function),
       new vscode.CompletionItem("rand", typesEnum.Function),
       new vscode.CompletionItem("perlin", typesEnum.Function),
       new vscode.CompletionItem("simplex", typesEnum.Function),
       new vscode.CompletionItem("print", typesEnum.Function),
+      new vscode.CompletionItem("format",typesEnum.Function),
       new vscode.CompletionItem("sleep", typesEnum.Function),
       new vscode.CompletionItem("time", typesEnum.Function),
       new vscode.CompletionItem("profile_expr", typesEnum.Function),
@@ -185,9 +188,6 @@ export class ScarpetSet extends Set<vscode.CompletionItem> {
       new vscode.CompletionItem("pairs", typesEnum.Function),
       //  Minecraft
       new vscode.CompletionItem("block", typesEnum.Function),
-      new vscode.CompletionItem("x", typesEnum.Function),
-      new vscode.CompletionItem("y", typesEnum.Function),
-      new vscode.CompletionItem("z", typesEnum.Function),
       new vscode.CompletionItem("_x", typesEnum.Function),
       new vscode.CompletionItem("_y", typesEnum.Function),
       new vscode.CompletionItem("_z", typesEnum.Function),
@@ -206,10 +206,20 @@ export class ScarpetSet extends Set<vscode.CompletionItem> {
       new vscode.CompletionItem("random_tick", typesEnum.Function),
       new vscode.CompletionItem("destroy", typesEnum.Function),
       new vscode.CompletionItem("harvest", typesEnum.Function),
+      new vscode.CompletionItem("add_chunk_ticket", typesEnum.Function),
+      new vscode.CompletionItem("chunk_tickets", typesEnum.Function),
+      new vscode.CompletionItem("last_tick_times", typesEnum.Function),
+      new vscode.CompletionItem("spawn_potential", typesEnum.Function),
+      new vscode.CompletionItem("structure_eligibility", typesEnum.Function),
+      new vscode.CompletionItem("view_distance", typesEnum.Function),
+      new vscode.CompletionItem("without_updates", typesEnum.Function),
+      new vscode.CompletionItem("world_time", typesEnum.Function),
+      new vscode.CompletionItem("unix_time", typesEnum.Function),
       //      Block and world querying
       new vscode.CompletionItem("pos", typesEnum.Function),
       new vscode.CompletionItem("pos_offset", typesEnum.Function),
       new vscode.CompletionItem("block_properties", typesEnum.Function),
+      new vscode.CompletionItem("brightness", typesEnum.Function),
       new vscode.CompletionItem("property", typesEnum.Function),
       new vscode.CompletionItem("block_data", typesEnum.Function),
       new vscode.CompletionItem("poi", typesEnum.Function),
@@ -244,12 +254,15 @@ export class ScarpetSet extends Set<vscode.CompletionItem> {
       new vscode.CompletionItem("block_sound", typesEnum.Function),
       new vscode.CompletionItem("material", typesEnum.Function),
       new vscode.CompletionItem("map_colour", typesEnum.Function),
+      new vscode.CompletionItem("day_time", typesEnum.Function),
+      new vscode.CompletionItem("inhabited_time", typesEnum.Function),
       //      Big boi stuff
       new vscode.CompletionItem("scan", typesEnum.Function),
       new vscode.CompletionItem("volume", typesEnum.Function),
       new vscode.CompletionItem("neighbours", typesEnum.Function),
       new vscode.CompletionItem("rect", typesEnum.Function),
       new vscode.CompletionItem("diamond", typesEnum.Function),
+      new vscode.CompletionItem("draw_shape", typesEnum.Function),
       //      Entity API
       new vscode.CompletionItem("player", typesEnum.Class),
       new vscode.CompletionItem("entity_id", typesEnum.Function),
@@ -270,6 +283,7 @@ export class ScarpetSet extends Set<vscode.CompletionItem> {
       new vscode.CompletionItem("inventory_find", typesEnum.Function),
       new vscode.CompletionItem("inventory_remove", typesEnum.Function),
       new vscode.CompletionItem("drop_item", typesEnum.Function),
+      new vscode.CompletionItem("crafting_remaining_item", typesEnum.Function),
       //      Events
       new vscode.CompletionItem("__command()->", typesEnum.Event),
       new vscode.CompletionItem("__config()->", typesEnum.Event),
@@ -277,7 +291,12 @@ export class ScarpetSet extends Set<vscode.CompletionItem> {
       new vscode.CompletionItem("__on_lightning(pos, mode)->", typesEnum.Event),
       new vscode.CompletionItem("__on_tick_nether()->", typesEnum.Event),
       new vscode.CompletionItem("__on_tick_ender()->", typesEnum.Event),
-      new vscode.CompletionItem("__on_chunk_generated()->", typesEnum.Event),
+      new vscode.CompletionItem("__on_chunk_generated(x, z)->", typesEnum.Event),
+      new vscode.CompletionItem("__on_close()->", typesEnum.Event),
+      new vscode.CompletionItem("__on_player_switches_slot(player, from, to)->", typesEnum.Event),
+      new vscode.CompletionItem("__on_player_swaps_hands(player)->", typesEnum.Event),
+      new vscode.CompletionItem("__on_player_disconnects(player, reason)->", typesEnum.Event),
+      new vscode.CompletionItem("__on_player_connects(player)->", typesEnum.Event),
       new vscode.CompletionItem(
         "__on_player_uses_item(player, item_tuple, hand)->",
         typesEnum.Event
@@ -288,6 +307,14 @@ export class ScarpetSet extends Set<vscode.CompletionItem> {
       ),
       new vscode.CompletionItem(
         "__on_player_finishes_using_item(player, item_tuple, hand)->",
+        typesEnum.Event
+      ),
+      new vscode.CompletionItem(
+        "__on_player_changes_dimension(player, from_pos, from_dimension, to_pos, to_dimension)->",
+        typesEnum.Event
+      ),
+      new vscode.CompletionItem(
+        "__on_player_chooses_recipe(player, recipe, full_stack)->",
         typesEnum.Event
       ),
       new vscode.CompletionItem(
@@ -363,8 +390,11 @@ export class ScarpetSet extends Set<vscode.CompletionItem> {
         "__on_statistic(player, category, event, value)->",
         typesEnum.Event
       ),
+      
       //      Misc
       new vscode.CompletionItem("sound", typesEnum.Function),
+      new vscode.CompletionItem("title", typesEnum.Function),
+      new vscode.CompletionItem("upper", typesEnum.Function),
       new vscode.CompletionItem("particle", typesEnum.Function),
       new vscode.CompletionItem("particle_line", typesEnum.Function),
       new vscode.CompletionItem("particle_rect", typesEnum.Function),
@@ -372,7 +402,6 @@ export class ScarpetSet extends Set<vscode.CompletionItem> {
       new vscode.CompletionItem("remove_all_marker", typesEnum.Function),
       new vscode.CompletionItem("nbt", typesEnum.Function),
       new vscode.CompletionItem("escape_nbt", typesEnum.Function),
-      new vscode.CompletionItem("print", typesEnum.Function),
       new vscode.CompletionItem("logger", typesEnum.Function),
       new vscode.CompletionItem("run", typesEnum.Function),
       new vscode.CompletionItem("save", typesEnum.Function),
@@ -387,6 +416,8 @@ export class ScarpetSet extends Set<vscode.CompletionItem> {
       new vscode.CompletionItem("statistic", typesEnum.Function),
       new vscode.CompletionItem("plop", typesEnum.Function),
       new vscode.CompletionItem("reset_chunk", typesEnum.Function),
+      new vscode.CompletionItem("recipe_data", typesEnum.Function),
+      new vscode.CompletionItem("reload_chunk", typesEnum.Function),
       //      Scoreboard API
       new vscode.CompletionItem("scoreboard", typesEnum.Keyword),
       new vscode.CompletionItem("scoreboard_add", typesEnum.Keyword),

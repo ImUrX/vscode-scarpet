@@ -4,3 +4,8 @@ node_modules
 *.vsix
 *.sc
 *.scl
+
+#testing/updating purposes
+
+*.txt
+*.py
