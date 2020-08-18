@@ -15,7 +15,7 @@
   "bugs": {
     "url": "https://github.com/ImUrX/vscode-scarpet/issues"
   },
-  "version": "0.1.8",
+  "version": "0.1.6",
   "engines": {
     "vscode": "^1.43.0"
   },
