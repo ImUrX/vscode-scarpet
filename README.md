@@ -1,6 +1,6 @@
 # scarpet for VSCode
 
-## How to use
+[![vscode version](https://img.shields.io/visual-studio-marketplace/v/ImUrX.scarpet)](https://marketplace.visualstudio.com/items?itemName=ImUrX.scarpet)
 
 ## How to install
 * Go [here](https://marketplace.visualstudio.com/items?itemName=ImUrX.scarpet&ssr=false)
