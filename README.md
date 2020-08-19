@@ -2,9 +2,16 @@
 
 ## How to use
 
-* Go to releases page and download latest version onto ur PC
-* Open up Vscode
-* Press Ctrl + Shift + X (Cmd in Mac)
+## How to install
+* Go [here](https://marketplace.visualstudio.com/items?itemName=ImUrX.scarpet&ssr=false)
+* Press install
+* Done
+
+## How to install without the marketplace
+
+* [Download latest release](https://github.com/ImUrX/vscode-scarpet/releases/latest)
+* Open up VS Code
+* Press Ctrl/Cmd + Shift + X 
 * Up near the top right corner of the Extensions tab click on the three dots symbol
 * Click the third setting from the bottom, `Install from VSIX...`
 * Navigate to where you downloaded VSIX file and double click
