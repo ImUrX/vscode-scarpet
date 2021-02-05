@@ -59,7 +59,11 @@
 				},
 				{
 					"name": "keyword.operator.definition",
-					"match": "\\->"
+					"match": "\\-\\>"
+				},
+				{
+					"name": "keyword.operator.spread",
+					"match": "\\.\\.\\."
 				},
 				{
 					"name": "keyword.operator.accessor",
