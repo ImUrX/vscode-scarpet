@@ -12,10 +12,7 @@ export default class ScarpetCompletionItemProvider
     const results: vscode.CompletionItem[] = [],
       text = document.lineAt(position.line).text;
 
-    if (
-      position.character <= 0 ||
-      this.isInsideStringOrComment(document, position)
-    ) {
+    if (position.character <= 0 || this.isInsideStringOrComment(document, position)) {
       return Promise.resolve(results);
     }
 
