@@ -29,6 +29,7 @@
   "categories": [
     "Programming Languages"
   ],
+  "icon": "./assets/scarpetIcon.png",
   "contributes": {
     "languages": [
       {
@@ -66,6 +67,7 @@
   "main": "./out/extension.js",
   "scripts": {
     "vscode:prepublish": "npm run compile",
+    "updateFont": "node ./build/updateFont.js",
     "compile": "tsc -p ./",
     "lint": "eslint src --ext ts",
     "watch": "tsc -watch -p ./",
