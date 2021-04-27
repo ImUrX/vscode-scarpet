@@ -33,9 +33,9 @@
     "autoCloseBefore": ";:.,=}]s) \n\t",
     "surroundingPairs": [
         ["(", ")"],
-        ["'", "'"],
         ["[", "]"],
-        ["{", "}"]
+        ["{", "}"],
+        ["'", "'"]
     ],
     "folding": {
         "markers": {
