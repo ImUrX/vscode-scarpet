@@ -11,3 +11,4 @@ vsc-extension-quickstart.md
 *.vsix
 *.sc
 *.scl
+build/**
