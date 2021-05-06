@@ -4,31 +4,22 @@ const typesEnum = vscode.CompletionItemKind;
 
 export default class ScarpetCompletionItemProvider
   implements vscode.CompletionItemProvider {
-  public async provideCompletionItems(
-    document: vscode.TextDocument,
-    position: vscode.Position,
-    token: vscode.CancellationToken
-  ): Promise<vscode.CompletionItem[]> {
+  public async provideCompletionItems(document: vscode.TextDocument, position: vscode.Position, token: vscode.CancellationToken): Promise<vscode.CompletionItem[]> {
     const results: vscode.CompletionItem[] = [],
       text = document.lineAt(position.line).text;
 
-    if (
-      position.character <= 0 ||
-      this.isInsideStringOrComment(document, position)
-    ) {
+    if (position.character <= 0 || this.isInsideStringOrComment(document, position)) {
       return Promise.resolve(results);
     }
 
     for (const item of ScarpetSet.set) {
       results.push(item);
     }
+    
     return Promise.resolve(results);
   }
 
-  private isInsideStringOrComment(
-    document: vscode.TextDocument,
-    position: vscode.Position
-  ): boolean {
+  private isInsideStringOrComment(document: vscode.TextDocument, position: vscode.Position): boolean {
     const strings: Array<number[]> = [],
       text = document.lineAt(position.line).text;
     let curString: number | null = null;
