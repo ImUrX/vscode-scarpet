@@ -10,11 +10,12 @@
 	],
 	"repository": {
 		"expression": {
-			"patterns": [{
-					"include": "#keywords"
-				},
+			"patterns": [
 				{
 					"include": "#strings"
+				},
+				{
+					"include": "#keywords"
 				},
 				{
 					"include": "#paren-expression"
@@ -38,18 +39,28 @@
 		},
 		"keywords": {
 			"patterns": [{
-					"match": "[^\\w]?(if|return|exit|try|call|import|outer|break|continue|for|c_for|while|loop|vars?|undef)[^\\w]",
+					"match": "[^\\w]?(if|return|exit|try|call|import|outer|break|continue|for|c_for|while|loop|vars?|undef)(\\([^\\)]*\\))",
 					"captures": {
 						"1": {
 							"name": "keyword.control"
+						},
+						"2": {
+							"patterns": [{
+								"include": "#paren-expression"
+							}]
 						}
 					}
 				},
 				{
-					"match": "[^\\w]?(copy|type|bool|number|str|player)[^\\w]",
+					"match": "[^\\w]?(copy|type|bool|number|str|player)(\\([^\\)]*\\))",
 					"captures": {
 						"1": {
 							"name": "support.type"
+						},
+						"2": {
+							"patterns": [{
+								"include": "#paren-expression"
+							}]
 						}
 					}
 				},
