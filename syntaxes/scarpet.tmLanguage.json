@@ -70,7 +70,11 @@
 				},
 				{
 					"name": "keyword.operator.definition",
-					"match": "\\->"
+					"match": "\\-\\>"
+				},
+				{
+					"name": "keyword.operator.spread",
+					"match": "\\.\\.\\."
 				},
 				{
 					"name": "keyword.operator.accessor",
@@ -135,7 +139,7 @@
 					]
 				},
 				{
-					"match": "(\\w+)(\\([^\\)]*\\))",
+					"match": "(\\w+)(\\(.*\\))",
 					"captures": {
 						"1": {
 							"name": "entity.name.function"
