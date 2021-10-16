@@ -128,7 +128,7 @@
 					]
 				},
 				{
-					"match": "(\\w+)(\\(.*\\))",
+					"match": "(\\w+)(\\(.*?\\))",
 					"captures": {
 						"1": {
 							"name": "entity.name.function"
