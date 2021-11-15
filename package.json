@@ -15,7 +15,7 @@
   "bugs": {
     "url": "https://github.com/ImUrX/vscode-scarpet/issues"
   },
-  "version": "0.1.12",
+  "version": "0.1.13",
   "engines": {
     "vscode": "^1.43.0"
   },
@@ -83,12 +83,12 @@
     "@types/mocha": "^7.0.1",
     "@types/node": "^12.11.7",
     "@types/vscode": "^1.43.0",
-    "@typescript-eslint/eslint-plugin": "^2.18.0",
-    "@typescript-eslint/parser": "^2.18.0",
+    "@typescript-eslint/eslint-plugin": "^5.0.0",
+    "@typescript-eslint/parser": "^5.0.0",
     "esbuild": "^0.11.15",
-    "eslint": "^6.8.0",
+    "eslint": "^8.0.1",
     "glob": "^7.1.6",
-    "mocha": "^7.0.1",
+    "mocha": "^9.1.3",
     "typescript": "^3.7.5",
     "vscode-test": "^1.3.0"
   }
