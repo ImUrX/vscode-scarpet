@@ -139,17 +139,30 @@
 					]
 				},
 				{
-					"match": "(\\w+)(\\(.*?\\))",
-					"captures": {
+					"begin": "(\\w+)(\\()",
+					"end": "\\)",
+					"beginCaptures": {
 						"1": {
 							"name": "entity.name.function"
 						},
 						"2": {
-							"patterns": [{
-								"include": "#paren-expression"
-							}]
+							"name": "punctuation.paren.open"
 						}
-					}
+					},
+					"endCaptures": {
+						"0": {
+							"name": "punctuation.paren.close"
+						}
+					},
+					"contentName": "expression.group",
+					"patterns": [
+						{
+							"include": "#expression"
+						},
+						{
+							"include": "#statements"
+						}
+					]
 				},
 				{
 					"name": "variable.name",
@@ -170,6 +183,16 @@
 				"name": "string.quoted.single",
 				"begin": "'",
 				"end": "'",
+				"beginCaptures": {
+					"0": {
+						"name": "punctuation.definition.string.begin"
+					}
+				},
+				"endCaptures": {
+					"0": {
+						"name": "punctuation.definition.string.end"
+					}
+				},
 				"patterns": [{
 					"name": "constant.character.escape.scarpet",
 					"match": "\\\\."
