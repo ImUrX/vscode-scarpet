@@ -39,17 +39,17 @@
 		},
 		"keywords": {
 			"patterns": [{
-					"match": "if|return|exit|try|call|import|outer|break|continue|for|c_for|while|loop|vars?|undef",
+					"match": "(?<!\\w)(if|return|exit|try|call|import|outer|break|continue|for|c_for|while|loop|vars?|undef)(?!\\w)",
 					"captures": {
-						"0": {
+						"1": {
 							"name": "keyword.control"
 						}
 					}
 				},
 				{
-					"match": "copy|type|bool|number|str|player",
+					"match": "(?<!\\w)(copy|type|bool|number|str|player)(?!\\w)",
 					"captures": {
-						"0": {
+						"1": {
 							"name": "support.type"
 						}
 					}
