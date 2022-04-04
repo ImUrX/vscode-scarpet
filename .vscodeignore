@@ -12,3 +12,4 @@ vsc-extension-quickstart.md
 *.sc
 *.scl
 build/**
+.yarnrc

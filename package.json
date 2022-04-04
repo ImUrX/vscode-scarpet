@@ -15,9 +15,9 @@
   "bugs": {
     "url": "https://github.com/ImUrX/vscode-scarpet/issues"
   },
-  "version": "0.1.14",
+  "version": "0.2.0",
   "engines": {
-    "vscode": "^1.43.0"
+    "vscode": "^1.65.0"
   },
   "keywords": [
     "scarpet",
@@ -43,6 +43,10 @@
           ".sc",
           ".scl"
         ],
+        "icon": {
+          "dark": "./assets/scarpetIcon.svg",
+          "light": "./assets/scarpetIcon.svg"
+        },
         "configuration": "./language-configuration.json"
       }
     ],
@@ -79,17 +83,16 @@
     "test-compile": "tsc -p ./"
   },
   "devDependencies": {
-    "@types/glob": "^7.1.1",
-    "@types/mocha": "^7.0.1",
-    "@types/node": "^12.11.7",
-    "@types/vscode": "^1.43.0",
-    "@typescript-eslint/eslint-plugin": "^5.0.0",
-    "@typescript-eslint/parser": "^5.0.0",
-    "esbuild": "^0.11.15",
-    "eslint": "^8.0.1",
-    "glob": "^7.1.6",
-    "mocha": "^9.1.3",
-    "typescript": "^3.7.5",
-    "vscode-test": "^1.3.0"
+    "@types/vscode": "^1.65.0",
+    "@types/glob": "^7.2.0",
+    "@types/mocha": "^9.1.0",
+    "@types/node": "14.x",
+    "@typescript-eslint/eslint-plugin": "^5.16.0",
+    "@typescript-eslint/parser": "^5.16.0",
+    "eslint": "^8.11.0",
+    "glob": "^7.2.0",
+    "mocha": "^9.2.2",
+    "typescript": "^4.5.5",
+    "@vscode/test-electron": "^2.1.3"
   }
 }

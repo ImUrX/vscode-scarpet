@@ -21,7 +21,16 @@
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
         <dc:title></dc:title>
+        <cc:license rdf:resource="https://github.com/ImUrX/vscode-scarpet/blob/master/LICENSE" />
+        <cc:attributionName>Uriel Fontan</cc:attributionName>
+        <cc:attributionURL rdf:resource="https://github.com/ImUrX/" />
       </cc:Work>
+      <cc:License rdf:about="https://github.com/ImUrX/vscode-scarpet/blob/master/LICENSE">
+        <cc:permits  rdf:resource="http://creativecommons.org/ns#Reproduction" />
+        <cc:permits  rdf:resource="http://creativecommons.org/ns#Distribution" />
+        <cc:permits  rdf:resource="http://creativecommons.org/ns#DerivativeWorks" />
+        <cc:requires rdf:resource="http://creativecommons.org/ns#Attribution" />
+      </cc:License>
     </rdf:RDF>
   </metadata>
   <g
