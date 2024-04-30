@@ -1,4 +1,6 @@
-# scarpet for VSCode
+# scarpet for VSCode - deprecated
+## USE [FedericoCarboni/vscode-scarpet](https://github.com/FedericoCarboni/vscode-scarpet)
+
 
 [![vscode version](https://img.shields.io/visual-studio-marketplace/v/ImUrX.scarpet)](https://marketplace.visualstudio.com/items?itemName=ImUrX.scarpet)
 
